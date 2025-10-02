@@ -1,0 +1,38 @@
+{ "name": "project2",
+  "version": "1.0.0",
+  "description": "A full-stack project with React and Express.",
+  "main": "server/server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server/server.js",
+    "dev:server": "nodemon --require dotenv/config server/server.js",
+    "reset:server": "node --require dotenv/config server/config/reset.js",
+    "dev:client": "vite client",
+    "build:client": "vite build client",
+    "lint:client": "eslint ./client",
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.36.0",
+    "@types/react": "^19.1.16",
+    "@types/react-dom": "^19.1.9",
+    "@vitejs/plugin-react": "^5.0.4",
+    "concurrently": "^8.2.2",
+    "eslint": "^9.36.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.22",
+    "globals": "^16.4.0",
+    "nodemon": "^3.1.10",
+    "vite": "^7.1.8"
+  }
+}
