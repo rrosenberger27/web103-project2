@@ -1,0 +1,29 @@
+.home-heading {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 3em;
+    color: #2c3e50;
+}
+
+.home-subheading {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2em;
+    color: #34495e;
+}
+
+.athlete-image-container {
+    text-align: center;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.athlete-image {
+    display: block;
+    margin: 20px auto;
+    width: 20%;
+    height: auto;
+}
