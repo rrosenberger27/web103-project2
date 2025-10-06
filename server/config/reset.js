@@ -3,15 +3,16 @@ const { pool }  = require('./database.js')
 
 const resetDb = async () => {
     try {
+        const dropTablesQuery = `DROP TABLE IF EXISTS events; 
+        DROP TABLE IF EXISTS stadiums`;
+
         const createStadiumsTableQuery = `
-        DROP TABLE IF EXISTS stadiums;
         CREATE TABLE stadiums (
             id SERIAL PRIMARY KEY,
             name VARCHAR(100) UNIQUE NOT NULL
         );
         `;
         const createEventsTableQuery = `
-        DROP TABLE IF EXISTS events;
         CREATE TABLE events (
             id SERIAL PRIMARY KEY,
             team1_name VARCHAR(100) NOT NULL,
@@ -26,6 +27,8 @@ const resetDb = async () => {
             FOREIGN KEY (stadium_id) REFERENCES stadiums(id) ON DELETE SET NULL
         );`;
 
+    await pool.query(dropTablesQuery);
+    console.log("✅ Tables dropped succesfully")
     await pool.query(createStadiumsTableQuery);
     console.log("✅ Stadiums table created successfully.");
     await pool.query(createEventsTableQuery);
